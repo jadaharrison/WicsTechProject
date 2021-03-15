@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import './journal.css'
 
 function Journal() {
     return (
