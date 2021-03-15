@@ -14,6 +14,12 @@ function Nav() {
             <li>About</li>
             </Link>
         </ul>
+
+        <u1>
+          <Link style = {navStyle} to= '/timer'>
+            <li>Timer</li>
+          </Link>
+        </u1>
     </nav>
   );
 }
