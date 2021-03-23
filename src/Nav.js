@@ -9,6 +9,12 @@ const navStyle = {
 function Nav() {
   return (
     <nav>
+      <ul>
+        <Link style = {navStyle} to= '/homepage'>
+          <li>Home Page</li>
+        </Link>
+      </ul>
+      
         <ul>
           <Link style = {navStyle} to= '/about'>
             <li>About</li>

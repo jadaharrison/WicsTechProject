@@ -6,11 +6,6 @@ function HomePage() {
     return (
 
         <div className = "homepage">
-            <center>
-                <h1>
-                    Hello, *Trying to Get Name*{}
-                </h1>
-            </center>
             <GetName/>
             <ToDoList/> 
         </div>

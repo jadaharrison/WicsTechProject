@@ -11,9 +11,17 @@ class App extends Component{
   render() {
     return (
       <div className = "app" >
-        <HomePage/> 
+        <center>
+          <h1>
+             Hello, *Trying to Get Name*{}
+          </h1>
+        </center>
         <Router>
         <Nav />
+        <Switch>
+        <Route path= "/homepage" exact component = {HomePage} />
+        </Switch>
+
         <Switch> 
         <Route path= "/about" exact component = {About} />
         </Switch>
