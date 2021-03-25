@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 
@@ -19,10 +20,19 @@
 
 
 .about {
-  background: #f4f5f5;
+  background: white;
   min-height: 800px;
   padding: 0.1cm;
   padding-left: 1cm;
+}
+
+.profile {
+  background:rgb(231, 183, 225);
+  height: 300px;
+  width: 300px;
+  justify-content: space-around;
+  border-radius: 50 px;
+  align-items: center;
 }
 
 
@@ -32,6 +42,7 @@ nav {
   align-items: center;
   min-height: 10vh;
   background: rgb(92, 40, 85);
+  list-style: none;
 
   
 }
@@ -42,4 +53,13 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+
+.profileContainer{
+  background: white;
+  min-height: 800px;
+  padding: 0.1cm;
+  padding-left: 1cm;
+  display: flex;
+  
 }
