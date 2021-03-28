@@ -6,7 +6,6 @@ function HomePage() {
     return (
 
         <div className = "homepage">
-            <GetName/>
             <ToDoList/> 
         </div>
     )
@@ -20,25 +19,6 @@ function ToDoList(props) {
         <span>{props.activity}</span>
     </div>
     ); 
-}
-
-function GetName() {
-    const [name, setName] = useState(" ");
-    const handleInput = event => {
-        setName(event.target.value);
-      };
-    
-
-      return (
-        <>
-        <div>
-          {/*<input onChange={handleInput} placeholder="Enter name"/>
-          <button onClick={logValue}>Log value</button> */}
-          What's your name? {name}
-        </div>
-        <input name={name} handleInput={handleInput} />
-        </>
-      );
 }
 
 export default HomePage;

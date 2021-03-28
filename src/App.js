@@ -13,7 +13,7 @@ class App extends Component{
       <div className = "app" >
         <center>
           <h1>
-             Hello, *Trying to Get Name*{}
+             Hello, *Trying to Get Name*
           </h1>
         </center>
         <Router>
