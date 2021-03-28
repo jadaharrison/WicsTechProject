@@ -21,16 +21,20 @@ function Header() {
 function Form() {
     const titleRef = useRef(null);
     const bodyRef = useRef(null);
+    const updateTitleRef = useRef(null);
+    const updateBodyRef = useRef(null);
 
     const[allEntries, setAllEntries] = useState([]);
-    
+    //const[isEditing, setIsEditing] = useState(false);
+
     function handleSubmit(event) {
         event.preventDefault();
 
         const newEntry = {
             title: titleRef.current.value,
             date: Date().toLocaleString(),
-            body: bodyRef.current.value
+            body: bodyRef.current.value, 
+            isEditing: 'false'
         }
 
         const updatedEntries = [newEntry, ...allEntries];
@@ -38,20 +42,42 @@ function Form() {
 
         event.target.reset();
 
-        console.log(allEntries);       
+        console.log(allEntries.length);
+        console.log(newEntry.isEditing);       
     }
 
-    function deleteEntry(index) {
-        const updatedEntries = [...allEntries.slice(0, index), ...allEntries.slice(index +1 )];
+    function deleteEntry(event) {
+        allEntries.splice(event.target.value, 1);
+        const updatedEntries = [...allEntries];
         setAllEntries(updatedEntries);
         console.log(allEntries);
     }
 
-    function handleDelete(event) {
-        const index = event.target.index;
-        deleteEntry(index);
+    function changeToEdit(index) {
+        const updatedEntries = [...allEntries];
+        const entryToUpdate = {...updatedEntries[index]};
+        entryToUpdate.isEditing = 'true';
+        updatedEntries[index] = entryToUpdate;
+        setAllEntries(updatedEntries);
     }
-    
+
+    function handleUpdate(event, index) {
+        event.preventDefault();
+
+        const oldEntry = allEntries[index];
+
+        const entry = {
+            title: updateTitleRef.current.value,
+            date: oldEntry.date,
+            body: updateBodyRef.current.value,
+            isEditing: 'false'
+        }
+
+        const updatedEntries = [...allEntries];
+        updatedEntries[index] = entry;
+        setAllEntries(updatedEntries);
+    }
+
     let id = 0;
 
     return (
@@ -60,22 +86,37 @@ function Form() {
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <input type="text" name="title" placeholder="Title" spellCheck="true" 
-                        ref={titleRef}/>
+                        ref={titleRef} required/>
                     <br></br>
                     <textarea type="text" name="body" placeholder="Entry" spellCheck="true" 
-                        ref={bodyRef}/>
+                        ref={bodyRef} required/>
                 </fieldset>
                 <button className="submit" type="submit"> Save </button>
             </form>
             <h2>All Entries</h2>
-            <div className="singleEntry">
-                {allEntries.map((entry, index) => <div key={id++}> 
-                    <h3>{entry.title}</h3>
-                    <p>{entry.date}</p>
-                    <p>{entry.body}</p> 
-                    <p>{index}</p>
-                    <button>Edit</button>
-                    <button type="button" onClick={handleDelete}>Delete</button>
+            <div className="allEntries">
+                {allEntries.map((entry) => <div key={id++}> 
+                    <div className="singleEntry">
+                        {(entry.isEditing === 'true') ? 
+                            <div className="editing">
+                                <form onSubmit={(event) => handleUpdate(event, allEntries.indexOf(entry))}>
+                                    <fieldset>
+                                        <input type="text" defaultValue={entry.title} ref={updateTitleRef} />
+                                        <textarea type="text" defaultValue={entry.body} ref={updateBodyRef} />
+                                    </fieldset>
+                                    <button className="submit" type="submit"> Save </button>
+                                </form>
+                            </div>
+                            : 
+                            <div className="notEditing"> 
+                                <h3>{entry.title}</h3>
+                                <p>{entry.date}</p>
+                                <p>{entry.body}</p> 
+                                <button type="button" onClick={() => changeToEdit(allEntries.indexOf(entry))}>Edit</button>
+                                <button type="button" onClick={deleteEntry} value={allEntries.indexOf(entry)}>Delete</button>   
+                            </div>
+                        }                                       
+                    </div>
                 </div>)}
             </div>
         </div>
