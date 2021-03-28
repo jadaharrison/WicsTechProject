@@ -7,15 +7,39 @@ import HomePage from "./HomePage";
 import "./App.css";
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = { name: '' };
+  }
+ 
+  handleChange = event => {
+    this.setState({ name: event.target.value });
+  };
+
+
 
   render() {
     return (
-      <div className = "app" >
+      <div className = "app" >    
         <center>
-          <h1>
-             Hello, *Trying to Get Name*
+        <h1>
+             Hello, {this.state.name}
           </h1>
+
+          <React.Fragment>
+       <form>
+         <label htmlFor="name">What's your name? </label>
+         <input
+           type="text"
+           name="name"
+           value={this.state.name}
+           onChange={this.handleChange}
+           onkeyup='saveValue(this);'
+         />
+       </form>
+     </React.Fragment>
         </center>
+        <br></br>
         <Router>
         <Nav />
         <Switch>
