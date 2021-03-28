@@ -26,6 +26,13 @@ function Nav() {
             <li>Timer</li>
           </Link>
         </u1>
+
+        <ul>
+          <Link style = {navStyle} to= '/journal.js'>
+            <li>Journal</li>
+            </Link>
+        </ul>
+
     </nav>
   );
 }

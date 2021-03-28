@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Nav from "./Nav";
 import About from "./About";
 import Timer from "./Timer";
+import Journal from "./journal.js"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import HomePage from "./HomePage";
 import "./App.css";
@@ -51,8 +52,13 @@ class App extends Component{
         </Switch>
 
         <Switch>
-      <Route path= "/timer" exact component = {Timer} />
-      </Switch>
+        <Route path= "/timer" exact component = {Timer} />
+        </Switch>
+
+        <Switch>
+        <Route path= "/journal.js" exact component = {Journal} />
+        </Switch>
+
         </Router>
 
       </div>
