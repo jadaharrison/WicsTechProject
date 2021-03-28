@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+import Leah from "./leahl01.jpeg"
+import Cindy from "./cindy.jpg"
+import Jada from "./jada.jpg"
 
 
 function Profile(props) {
@@ -8,7 +11,9 @@ function Profile(props) {
     return (
        
         <div className = "profile">
-         <img src={"leahl01.png"} alt={"Leah"}/>
+         <img src={Leah} alt={"Leah"}/>
+         <br></br>
+         <br></br>
             <h3>{props.name}</h3>
             <h3> {props.school}</h3>
             <h3>{props.major}</h3>
@@ -21,7 +26,9 @@ function Profile(props) {
         return (
            
             <div className = "profile">
-              <h1> b </h1>
+               <img src={Jada} alt={"Jada"}/>
+               <br></br>
+               <br></br>
                 <h3>{props.name}</h3>
                 <h3> {props.school}</h3>
                 <h3>{props.major}</h3>
@@ -35,6 +42,8 @@ function Profile(props) {
                
              <div className = "profile">
               <h1> c </h1>
+              <br></br>
+              <br></br>
                 <h3>{props.name}</h3>
                 <h3> {props.school}</h3>
                 <h3>{props.major}</h3>
@@ -47,7 +56,10 @@ function Profile(props) {
          return (
                    
              <div className = "profile">
-                <h1> d </h1>  
+                 <img src={Cindy} alt={"Cindy"}/>
+                 <br></br>
+                 <br></br>
+                 <br></br>
                     <h3>{props.name}</h3>
                      <h3> {props.school}</h3>
                       <h3>{props.major}</h3>
