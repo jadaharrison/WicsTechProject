@@ -60,7 +60,6 @@ function Profile(props) {
                  <img src={Cindy} alt={"Cindy"}/>
                  <br></br>
                  <br></br>
-                 <br></br>
                     <h3>{props.name}</h3>
                      <h3> {props.school}</h3>
                       <h3>{props.major}</h3>
