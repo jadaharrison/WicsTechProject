@@ -10,7 +10,8 @@ function HomePage() {
         </div>
     )
 }
-
+//https://www.youtube.com/watch?v=e_ZibOe77yo
+//https://www.pluralsight.com/guides/how-to-pass-props-object-from-child-component-to-parent-component
 class ToDoList extends React.Component {
     constructor (props) {
         super(props);
