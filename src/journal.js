@@ -1,7 +1,9 @@
 import React, {useState, useRef} from 'react';
 import './journal.css';
 //import axios from 'axios';
-import api from './api.js'
+import api from './api.js';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 function Journal() {
     return (
@@ -100,7 +102,7 @@ function Form() {
                     <textarea type="text" name="body" placeholder="Entry" spellCheck="true" 
                         ref={bodyRef} required/>
                 </fieldset>
-                <button className="submit" type="submit"> Save </button>
+                <Button variant="outline-dark" className="submit" type="submit"> Save </Button>
             </form>
             <h2>All Entries</h2>
             <div className="allEntries">
@@ -113,7 +115,7 @@ function Form() {
                                         <input type="text" defaultValue={entry.title} ref={updateTitleRef} />
                                         <textarea type="text" defaultValue={entry.body} ref={updateBodyRef} />
                                     </fieldset>
-                                    <button className="submit" type="submit"> Save </button>
+                                    <Button variant="outline-dark"className="submit" type="submit"> Save </Button>
                                 </form>
                             </div>
                             : 
@@ -121,8 +123,10 @@ function Form() {
                                 <h3>{entry.title}</h3>
                                 <p>{entry.date}</p>
                                 <p>{entry.body}</p> 
-                                <button type="button" onClick={() => changeToEdit(allEntries.indexOf(entry))}>Edit</button>
-                                <button type="button" onClick={deleteEntry} value={allEntries.indexOf(entry)}>Delete</button>   
+                                <ButtonGroup aria-label="Basic example">
+                                    <Button variant="outline-dark" type="button" onClick={() => changeToEdit(allEntries.indexOf(entry))}>Edit</Button>
+                                    <Button variant="outline-dark" type="button" onClick={deleteEntry} value={allEntries.indexOf(entry)}>Delete</Button>{' '}
+                                </ButtonGroup>  
                             </div>
                         }                                       
                     </div>

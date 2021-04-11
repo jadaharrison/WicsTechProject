@@ -98,7 +98,7 @@ function Timer() {
                     The Pomodoro method is used to improve productivity by using 25-minute work segments with 5-minute breaks in between,
                     but you can customize it according to your own preferences. Have trouble staying focused? Try this out!
                     
-                <p> <img src={"laptop.png"} alt={"cute graphic"}/> </p>
+                <p className="text-center"> <img src={"laptop.png"} alt={"cute graphic"}/> </p>
                 <div className="text-center">
                     <div className="dual-container">
                         <Length 
