@@ -6,15 +6,20 @@
     align-items: center;
 }
 
-
-p {
-    text-align: center;
-}
-
 .dual-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 700px;
     margin: auto;
     align-items: center;
+}
+
+.button {
+    background:rgb(92, 40, 85);
+    border-radius: 10px;
+    color: white;
+  }
+
+p {
+    text-align: center;
 }

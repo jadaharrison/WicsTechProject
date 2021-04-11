@@ -1,7 +1,8 @@
 import React from "react"; 
 import "./App.css";
-import './Timer.css'
-
+import './Timer.css';
+import { FiArrowUpCircle } from 'react-icons/fi';
+import { FiArrowDownCircle } from 'react-icons/fi';
 
 function Timer() {
     const [displayTime, setDisplayTime] = React.useState(25 * 60);
@@ -90,12 +91,13 @@ function Timer() {
 
     return (
         <div className = "timer">
-            <h1> POMODORO TIMER ✩⃛( ͒ ु•·̫• ू ͒) </h1>
+            <h1> Pomodoro Timer </h1>
+
                 <h2> What is a Pomodoro Timer? </h2>
-                    The Pomodoro method is used to improve productivity by using
-                    30-minute work segments with 5-minute breaks in between. 
-                    Have trouble staying focused? Try this out!
-                <img src={"laptop.png"} alt={"cute graphic"}/>
+                    The Pomodoro method is used to improve productivity by using 25-minute work segments with 5-minute breaks in between,
+                    but you can customize it according to your own preferences. Have trouble staying focused? Try this out!
+                    
+                <p> <img src={"laptop.png"} alt={"cute graphic"}/> </p>
                 <div className="center-align">
                     <div className="dual-container">
                         <Length 
@@ -119,19 +121,19 @@ function Timer() {
                 <div className="dual-container">
                     <button 
                         onClick={controlTime}
-                        className="btn-small deep-purple lighten-2" 
+                        className="button" 
                     >
                         {timerOn ? (
-                            <i className="material-icons">pause</i>
+                            <i>pause</i>
                         ) : (
-                            <i className="material-icons">play</i>
+                            <i>play</i>
                         )}
                     </button>
                     <button 
                         onClick={resetTime}
-                        className="btn-small deep-purple lighten-2" 
+                        className="button" 
                     >
-                        <i className="material-icons">reset</i>
+                        <i>reset</i>
                     </button>
                 </div>
         </div>
@@ -146,16 +148,16 @@ function Timer() {
                 <div className="time-sets">
                     <button 
                         onClick={() => changeTime(-60, type)}
-                        className="btn-small deep-purple lighten-2"
+                        className="button"
                     >
-                        <i className="material-icons">decrease</i>
+                        <FiArrowDownCircle size = '10x'/>
                     </button>
                     <h3>{formatTime(time)}</h3>
                     <button 
                         onClick={() => changeTime(60, type)}
-                        className="btn-small deep-purple lighten-2"
+                        className="button"
                     >
-                        <i className="material-icons">increase</i>
+                        <FiArrowUpCircle size = '10x' />
                     </button>
                 </div>
             </div>
