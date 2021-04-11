@@ -6,6 +6,8 @@ import Journal from "./journal.js"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import HomePage from "./HomePage";
 import "./App.css";
+import Login from "./Login";
+import Logout from "./Logout";
 
 class App extends Component{
   constructor(props){
@@ -22,6 +24,7 @@ class App extends Component{
   render() {
     return (
       <div className = "app" >    
+      <Login /> <Logout />
         <center>
         <h1>
              Hello, {this.state.name}
@@ -38,6 +41,7 @@ class App extends Component{
            onkeyup='saveValue(this);'
          />
        </form>
+
      </React.Fragment>
         </center>
         <br></br>
