@@ -1,5 +1,7 @@
 import React, {useState, useRef} from 'react';
-import './journal.css'
+import './journal.css';
+//import axios from 'axios';
+import api from './api.js'
 
 function Journal() {
     return (
@@ -25,7 +27,6 @@ function Form() {
     const updateBodyRef = useRef(null);
 
     const[allEntries, setAllEntries] = useState([]);
-    //const[isEditing, setIsEditing] = useState(false);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -42,8 +43,16 @@ function Form() {
 
         event.target.reset();
 
-        console.log(allEntries.length);
-        console.log(newEntry.isEditing);       
+        const payload = newEntry;
+
+        api.insertJournal(payload).then(
+            window.alert(`Journal inserted successfully`)
+            // this.setState({
+            //     name: '',
+            //     rating: '',
+            //     time: '',
+            // })
+        )
     }
 
     function deleteEntry(event) {
