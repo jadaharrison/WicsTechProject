@@ -3,6 +3,7 @@ import "./App.css";
 import Leah from "./leahl01.jpeg"
 import Cindy from "./cindy.jpg"
 import Jada from "./jada.jpg"
+import Nicole from "./NicoleChau.jpg"
 
 
 function Profile(props) {
@@ -41,7 +42,7 @@ function Profile(props) {
         return (
                
              <div className = "profile">
-              <h1> c </h1>
+              <img src={Nicole} alt={"Nicole"}/>
               <br></br>
               <br></br>
                 <h3>{props.name}</h3>
@@ -57,7 +58,6 @@ function Profile(props) {
                    
              <div className = "profile">
                  <img src={Cindy} alt={"Cindy"}/>
-                 <br></br>
                  <br></br>
                  <br></br>
                     <h3>{props.name}</h3>

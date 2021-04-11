@@ -12,7 +12,7 @@ function ProfileContainer() {
             <Profile name = "Nicole Chau" school = "SEAS '23" 
                 major = "Digital Media Design" person = "3"/>
             <Profile name = "Cindy Chen" school = "CAS '23" 
-                major = "Computer Science" person = "4"/>
+                major = "Economics and Computer Science" person = "4"/>
         
             
         </div>
