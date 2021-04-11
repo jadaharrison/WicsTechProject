@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HomePage from './HomePage';
-const DATA = [
-  { id: "todo-0", name: "Task1", completed: true}
-];
+
 ReactDOM.render(
   <React.StrictMode>
       <App/>
