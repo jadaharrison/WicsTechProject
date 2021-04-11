@@ -21,11 +21,11 @@ function Nav() {
             </Link>
         </ul>
 
-        <u1>
+        <ul>
           <Link style = {navStyle} to= '/timer'>
             <li>Timer</li>
           </Link>
-        </u1>
+        </ul>
 
         <ul>
           <Link style = {navStyle} to= '/journal.js'>

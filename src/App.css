@@ -3,10 +3,6 @@
 
 }
 
-
-
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -42,9 +38,11 @@ nav {
   align-items: center;
   min-height: 10vh;
   background: rgb(92, 40, 85);
-  list-style: none;
+  top: 0;
+}
 
-  
+nav ul {
+  list-style: none;
 }
 
 .nav-Links {
@@ -60,6 +58,4 @@ nav {
   min-height: 800px;
   padding: 0.1cm;
   display: flex;
-
-  
 }
