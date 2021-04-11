@@ -35,7 +35,7 @@ class App extends Component{
            name="name"
            value={this.state.name}
            onChange={this.handleChange}
-           onkeyup='saveValue(this);'
+           style={{ width: "100px" }}
          />
        </form>
      </React.Fragment>
