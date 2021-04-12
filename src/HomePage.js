@@ -1,7 +1,6 @@
 import React from "react"; 
 import "./App.css";
-
-
+import Button from 'react-bootstrap/Button';
 
 function HomePage() {
     return (
@@ -65,20 +64,20 @@ class ToDoList extends React.Component {
                     onChange={e => this.updateInput("newTask",e.target.value)}
                     style={{ width: "400px" }}>
                     </input>
-                    <button 
+                    {' '}<Button variant="outline-dark"
                       onClick={()=> this.addTask()}
                     >
                         Add 
-                    </button>
+                    </Button>
                     <ul>
                         {this.state.list.map(task => {
                             return (
                                 <li key={task.id}>
                                     {task.value}
-                                    <button
+                                    {' '}<Button variant="outline-dark"
                                         onClick={()=> this.deleteTask(task.id)}
                                         > Completed!
-                                    </button>
+                                    </Button>
                                 </li>
                             )
                         })}
