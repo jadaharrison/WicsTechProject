@@ -10,14 +10,18 @@ import "./App.css";
 class App extends Component{
   constructor(props){
     super(props);
-    this.state = { name: '' };
+    this.state = { 
+      name: "",
+    };
   }
  
   handleChange = event => {
     this.setState({ name: event.target.value });
   };
 
-
+  submitHandler(e) {
+    e.preventDefault();
+  };
 
   render() {
     return (
@@ -28,14 +32,14 @@ class App extends Component{
           </h1>
 
           <React.Fragment>
-       <form>
+       <form onSubmit={this.submitHandler}>
          <label htmlFor="name">What's your name? </label>
          <input
            type="text"
            name="name"
            value={this.state.name}
            onChange={this.handleChange}
-           onkeyup='saveValue(this);'
+           style={{ width: "100px" }}
          />
        </form>
 
@@ -61,10 +65,10 @@ class App extends Component{
         </Switch>
 
         </Router>
-
       </div>
     );
   }
 }
+
 
 export default App;
