@@ -1,9 +1,10 @@
 import React, {useState, useRef} from 'react';
 import './journal.css';
 //import axios from 'axios';
-import api from './api.js';
+// import api from './api.js';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
 
 function Journal() {
     return (
@@ -31,11 +32,14 @@ function Form() {
     const[allEntries, setAllEntries] = useState([]);
 
     function handleSubmit(event) {
+
         event.preventDefault();
+
+        const date = new Date();
 
         const newEntry = {
             title: titleRef.current.value,
-            date: Date().toLocaleString(),
+            date: date.toLocaleString('en-US'),
             body: bodyRef.current.value, 
             isEditing: 'false'
         }
@@ -45,23 +49,25 @@ function Form() {
 
         event.target.reset();
 
-        const payload = newEntry;
+        // const payload = newEntry;
 
-        api.insertJournal(payload).then(
-            window.alert(`Journal inserted successfully`)
+        // api.insertJournal(payload).then(
+        //     window.alert(`Journal inserted successfully`)
             // this.setState({
             //     name: '',
             //     rating: '',
             //     time: '',
             // })
-        )
+        // )
     }
 
     function deleteEntry(event) {
-        allEntries.splice(event.target.value, 1);
-        const updatedEntries = [...allEntries];
-        setAllEntries(updatedEntries);
-        console.log(allEntries);
+        if (window.confirm('Are you sure you want to delete this entry?')) {
+            allEntries.splice(event.target.value, 1);
+            const updatedEntries = [...allEntries];
+            setAllEntries(updatedEntries);
+            console.log(allEntries);
+        }
     }
 
     function changeToEdit(index) {
