@@ -23,7 +23,7 @@
 }
 
 .profile {
-  background:rgb(231, 183, 225);
+  background:rgb(213, 183, 231);
   height: 500px;
   width: 400px;
   justify-content: space-around;
@@ -37,7 +37,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: rgb(92, 40, 85);
+  background: rgb(77, 38, 92);
   top: 0;
 }
 
@@ -58,4 +58,9 @@ nav ul {
   min-height: 800px;
   padding: 0.1cm;
   display: flex;
+}
+
+.app h1 {
+  margin-top: 10%;
+  margin-bottom: 2%;
 }

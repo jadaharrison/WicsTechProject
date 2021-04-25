@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 function HomePage() {
     return (
         <div className = "homepage">
+            <p>Welcome to Daily Bud! This website will help you keep track of your to do list, 
+                manage your time and keep a journal. </p>
             <ToDoList/>
         </div>
     )

@@ -21,19 +21,18 @@ class App extends Component{
 
   submitHandler(e) {
     e.preventDefault();
-  };
+  }
 
   render() {
     return (
       <div className = "app" >    
         <center>
-        <h1 style = {{ margin: 100}}>
+        <h1>
              Hello, {this.state.name}
           </h1>
-
           <React.Fragment>
        <form onSubmit={this.submitHandler}>
-         <label htmlFor="name">What's your name? </label>
+         <label htmlFor="name">What&apos;s your name? </label>
          <input
            type="text"
            name="name"
@@ -42,7 +41,6 @@ class App extends Component{
            style={{ width: "100px" }}
          />
        </form>
-
      </React.Fragment>
         </center>
         <br></br>

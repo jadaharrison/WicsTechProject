@@ -12,6 +12,8 @@ const navStyle = {
 function Nav() {
   return (
     <Navbar class="navbar-toggleable-md" fixed="top">
+    <Navbar.Brand href="/homepage">Daily Bud</Navbar.Brand>  
+
       <ul>
         <Link style = {navStyle} to= '/homepage'>
           <li>Home Page</li>
